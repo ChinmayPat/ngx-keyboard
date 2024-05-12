@@ -1,0 +1,9 @@
+<div class="keyboard-wrapper">
+  @for (row of layout(); track $index) {
+    <div class="row">
+      @for (key of parseRow(row); track $index) {
+        <span class="key-btn">{{ key }}</span>
+      }
+    </div>
+  }
+</div>
