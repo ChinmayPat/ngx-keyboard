@@ -1,8 +1,6 @@
-export type DefaultLayoutTypes = 'numpad' | 'shift' | 'default';
+export type DefaultLayoutTypes = keyof typeof LAYOUTS;
 
-export type Layout = string[];
-
-export const LAYOUTS: Record<DefaultLayoutTypes, Layout> = {
+export const LAYOUTS = {
   default: [
     '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
     '{tab} q w e r t y u i o p [ ] \\',

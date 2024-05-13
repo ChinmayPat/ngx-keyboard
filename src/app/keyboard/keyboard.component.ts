@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
   signal,
 } from '@angular/core';
-import { DefaultLayoutTypes, LAYOUTS, Layout } from './model/keyboard.model';
+import { DefaultLayoutTypes, LAYOUTS } from './model/keyboard.model';
 
 @Component({
   selector: 'keyboard',
@@ -21,15 +21,15 @@ export class KeyboardComponent {
     this.setKeyboardLayout(LAYOUTS[name]);
   }
 
-  @Input() set layoutKeys(keys: Layout) {
+  @Input() set layoutKeys(keys: string[]) {
     this.setKeyboardLayout(keys);
   }
 
   @Output() keyPressed = new EventEmitter<string>();
 
-  protected layout = signal<Layout>([]);
+  protected layout = signal<string[]>([]);
 
-  private setKeyboardLayout(keys: Layout) {
+  private setKeyboardLayout(keys: string[]) {
     this.layout.set(keys);
   }
 

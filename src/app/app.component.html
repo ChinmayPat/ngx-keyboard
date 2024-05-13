@@ -1,3 +1,5 @@
-<keyboard [layoutName]="layout"></keyboard>
+<input #inputField type="text" style="height: 40px; margin: 3%;">
+
+<keyboard [layoutName]="layout" (keyPressed)="handleKeyPress($event)"></keyboard>
 
 <button type="button" style="position: sticky; bottom: 0; border: 1px solid red;" (click)="toggle()">toggle layout</button>
