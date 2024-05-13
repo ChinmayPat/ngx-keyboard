@@ -2,7 +2,7 @@
   @for (row of layout(); track $index) {
     <div class="row">
       @for (key of parseRow(row); track $index) {
-        <span class="key-btn" (click)="onKeyPress(key)">{{ key }}</span>
+        <button type="button" class="key-btn" (click)="onKeyPress(key)">{{ key }}</button>
       }
     </div>
   }
